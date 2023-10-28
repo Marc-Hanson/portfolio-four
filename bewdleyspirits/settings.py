@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-marc-hanson-portfolio-fo-iixiwi2j4y.us2.codeanyapp.com',
-                 'marc-hanson-portfolio-four-717bb8dbff17.herokuapp.com/']
+                 'marc-hanson-portfolio-four-717bb8dbff17.herokuapp.com']
 
 
 # Application definition
