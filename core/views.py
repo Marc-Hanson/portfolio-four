@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import Review
+from .models import Event
 
-class ReviewList(generic.ListView):
-    model = Post
-    queryset = Post.objects.filter(status=1).order_by(-created_on)
+
+class EventList(generic.ListView):
+    model = Event
+    queryset = Event.objects.order_by('date')
     template_name = 'index.html'

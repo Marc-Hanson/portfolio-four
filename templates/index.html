@@ -1,7 +1,22 @@
 {% extends "base.html" %}
 {% block title %} Home {% endblock %}
 {% block content %}
-
-<!-- INDEX CONTENT HERE -->
-
+<!-- UPCOMING EVENTS AREA -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            {% for event in event_list %}
+            <div class="col-md-4">
+                <div class="card-md-4">
+                    <div class="card-body">
+                        <p class="event-date">{{ event.date }}</p>
+                        <p class="event-title">{{ event.title }}</p>
+                        <p class="event-location">{{ event.location }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {%endblock%}
