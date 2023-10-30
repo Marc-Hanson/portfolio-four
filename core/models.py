@@ -3,9 +3,10 @@ from django.contrib.auth.models import User
 
 
 class Event(models.Model):
-    date = models.DateTimeField()
     title = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
+    description = models.TextField()
+    date = models.DateTimeField()
 
     class Meta:
         ordering = ['date']

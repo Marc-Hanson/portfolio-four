@@ -1,0 +1,7 @@
+.main-bg {
+    background-image: url("/static/images/full_logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

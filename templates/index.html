@@ -1,22 +1,17 @@
 {% extends "base.html" %}
 {% block title %} Home {% endblock %}
 {% block content %}
+
 <!-- UPCOMING EVENTS AREA -->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 mt-3 left">
-            {% for event in event_list %}
-            <div class="col-md-4">
-                <div class="card-md-4">
-                    <div class="card-body">
-                        <p class="event-date">{{ event.date }}</p>
-                        <p class="event-title">{{ event.title }}</p>
-                        <p class="event-location">{{ event.location }}</p>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+<div class="">
+{% for event in event_list %}
+    <div class="w-1/2 m-4 h-100 rounded shadow-2xl justify-around bg-blue-400 flex flex-col border-double border-4 border-sky-500 p-4">
+        <p class="uppercase text-sm text-center">{{ event.title }}</p>
+        <p class="text-blue-800 text-2xl font-bold uppercase my-4 text-center">{{ event.description }}</p>
+        <p class="text-sm uppercase text-gray-900 text-center">{{ event.location }}</p>
+        <p class="text-sm uppercase text-gray-900 text-center">{{ event.date }}</p>
     </div>
+{% endfor %}
 </div>
+
 {%endblock%}
