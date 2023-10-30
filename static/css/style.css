@@ -5,3 +5,15 @@
     background-size: cover;
     background-attachment: fixed;
 }
+
+.logo-style {
+    font-family: 'Kaushan Script', cursive;
+}
+
+a {
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
