@@ -2,6 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+class StarRating(models.IntegerChoices):
+    ZERO = 0, 'Zero'
+    ONE = 1, 'One'
+    TWO = 2, 'Two'
+    THREE = 3, 'Three'
+    FOUR = 4, 'Four'
+    FIVE = 5, 'Five'
+
+
 class Event(models.Model):
     title = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
@@ -17,6 +26,7 @@ class Event(models.Model):
 
 class Review(models.Model):
     title = models.CharField(max_length=255)
+    stars = models.IntegerField(default=StarRating.FIVE, choices=StarRating.choices)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)

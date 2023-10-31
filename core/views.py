@@ -13,3 +13,4 @@ class ReviewList(generic.ListView):
     model = Review
     queryset = Review.objects.order_by('-created_on')
     template_name = 'about.html'
+    paginate_by = 4
