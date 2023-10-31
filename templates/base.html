@@ -4,6 +4,7 @@
 <html lang="en">
   <head>
     <title>{% block head_title %}{% endblock %} | Bewdley Spirits</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
     <!-- metadata -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,7 +27,7 @@
         <!-- Logo -->
         <div>
             <h2 class="text-5xl font-bold">
-                <a href="#" class="hover:text-blue-400 transition-colors duration-300 logo-style">Bewdley Spirits</a>
+                <a href="{% url 'home' %}" class="hover:text-blue-400 transition-colors duration-300 logo-style">Bewdley Spirits</a>
             </h2>
         </div>
         <!-- /End Logo -->
@@ -38,7 +39,7 @@
                 </li>
                 <li>
                     <a
-                        class="font-semibold tracking-tight block cursor-pointer p-2 hover:text-blue-400 transition-colors duration-300">Shop Merch</a>
+                        class="font-semibold tracking-tight block cursor-pointer p-2 hover:text-blue-400 transition-colors duration-300" href="https://ko-fi.com/bewdleyspirits/shop">Shop Merch</a>
                 </li>
                 <li>
                     <a
