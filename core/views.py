@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
+from django.views.generic import ListView
 from .models import Event, Review
 
 
@@ -13,4 +14,4 @@ class ReviewList(generic.ListView):
     model = Review
     queryset = Review.objects.order_by('-created_on')
     template_name = 'about.html'
-    paginate_by = 4
+    paginate_by = 1
