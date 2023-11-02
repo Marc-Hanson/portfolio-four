@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+from django.shortcuts import render
+>>>>>>> 783a447edc49da106769be58ac8d225c43370247
 from django.views import generic, View
 from django.views.generic import ListView
 from .models import Event, Review

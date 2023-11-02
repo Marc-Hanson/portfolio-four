@@ -6,6 +6,7 @@
     <div class="col-start-1 row-start-1 bg-gray-800 bg-opacity-60 w-full h-full">
         <div class="col-start-1 row-start-1 mx-auto my-auto py-40">
             <h1 class="font-bold text-5xl pb-2 mx-auto">About Us</h1>
+<<<<<<< HEAD
             <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold">Bewdley Spirits is a small craft distillery
                 based on the banks of the River Severn, in the heart of England in the
                 historic Georgian town of Bewdley, Worcestershire.</p>
@@ -39,6 +40,33 @@
                         {% elif review.stars == 0 %} <p class="text-yellow-400 text-2xl">☆☆☆☆☆</p>
                         {% endif %}
                     </div>
+=======
+            <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold">Bewdley Spirits is a small craft distillery based on the banks of the River Severn, in the heart of England in the
+            historic Georgian town of Bewdley, Worcestershire.</p>
+            <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold">Lets tell you a little more about us...</p>
+            <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold">We are located at the award winning Bewdley Brewery and all spirits produced are made from beers produced onsite at the
+            Brewery. All spirits are distilled and double-filtered to create a smooth clean finish. Each bottle is filled by hand and wax
+            dipped to ensure quality every time.</p>
+            <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold">Richard & Sarah Hanson started the business in 2023 **MORE INFORMATION ABOUT RICH&SARAH**</p>
+        </div>
+    </div>
+<!-- testimonials -->
+<div class="pb-24 w-full bg-white bg-opacity-60">
+    <h1 class="logo-style text-7xl py-10 text-black">Testimonials</h1>
+    {% for review in review_list %}
+    <div class="lg:w-2/5 mx-auto my-4 h-100 rounded shadow-2xl text-center justify-around bg-blue-400 flex flex-col border-double border-4 border-blue-800 p-4">
+        <div class="flex w-full flex-col gap-0.5">
+            <div class="flex items-center justify-between">
+                <h5 class="block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">{{ review.title }}</h5>
+                <div class="5 flex items-center gap-0">
+                {% if review.stars == 5 %} <p class="text-yellow-400 text-2xl">★★★★★</p>
+                {% elif review.stars == 4 %} <p class="text-yellow-400 text-2xl">☆★★★★</p>
+                {% elif review.stars == 3 %} <p class="text-yellow-400 text-2xl">☆☆★★★</p>
+                {% elif review.stars == 2 %} <p class="text-yellow-400 text-2xl">☆☆☆★★</p>
+                {% elif review.stars == 1 %} <p class="text-yellow-400 text-2xl">☆☆☆☆★</p>
+                {% elif review.stars == 0 %} <p class="text-yellow-400 text-2xl">☆☆☆☆☆</p>
+                {% endif %}
+>>>>>>> 783a447edc49da106769be58ac8d225c43370247
                 </div>
                 <p class="block font-sans text-base font-light leading-relaxed text-blue-gray-900 antialiased">{{
                     review.author }} | {{ review.created_on }}</p>
@@ -48,6 +76,7 @@
                     review.content }}</p>
             </div>
         </div>
+<<<<<<< HEAD
         {% endfor %}
         <!-- pagination and arrows -->
         <div class="pagination">
@@ -61,12 +90,35 @@
                 {% if page_obj.has_next %}
                 <a href="?page={{ page_obj.next_page_number }}" class="text-blue-400 text-3xl"> → </a>
                 {% endif %}
+=======
+        <div class="mb-6 p-0">
+            <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">{{ review.content }}</p>
+        </div>
+    </div>
+    {% endfor %}
+    <!-- pagination and arrows -->
+    <div class="pagination">
+        <span class="step-links flex items-center justify-center">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="text-blue-400 text-3xl"> ← </a>
+            {% endif %}
+            <span class="current text-black">
+                 | Review {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}. | 
+>>>>>>> 783a447edc49da106769be58ac8d225c43370247
             </span>
         </div>
     </div>
+<<<<<<< HEAD
     <!-- leave a review -->
     {% if user.is_authenticated %}
     {% include 'form.html' %}
     {% endif %}
+=======
+</div>
+<!-- leave a review -->
+{% if user.is_authenticated %}
+{% include 'form.html' %}
+{% endif %}
+>>>>>>> 783a447edc49da106769be58ac8d225c43370247
 </div>
 {%endblock%}
