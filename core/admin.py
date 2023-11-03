@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Event, Review
+from .models import Event, Review, Product
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
@@ -15,3 +15,8 @@ class ReviewAdmin(admin.ModelAdmin):
 class EventAdmin(admin.ModelAdmin):
 
     list_display = ('date', 'title')
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+
+    list_display = ('title',)

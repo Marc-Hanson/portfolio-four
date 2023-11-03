@@ -19,6 +19,5 @@ class ReviewList(generic.ListView):
 
 class ProductList(generic.ListView):
     model = Product
-    queryset = Event.objects.order_by('title')
+    queryset = Product.objects.order_by('title')
     template_name = 'products.html'
-    paginate_by = 2

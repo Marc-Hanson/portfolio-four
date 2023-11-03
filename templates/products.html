@@ -1,5 +1,21 @@
 {% extends "base.html" %}
 {% block head_title %} Products {% endblock %}
 {% block content %}
- <h1>PRODUCTS PAGE</h1>
+<div class="col-start-1 row-start-1 bg-white bg-opacity-60 w-full h-full text-center">
+    <h1 class="logo-style text-7xl py-10 mx-auto">Our Products</h1>
+    {% for product in product_list %}
+    <div class="">
+        <h5 class="font-bold text-5xl pb-2 mx-auto">{{ product.title }}</h5>
+        {% if "placeholder" in post.featured_image.url %}
+        <img class="object-none rounded-full w-96 mx-auto" src="static/images/full_logo.png">
+        {% else %}
+        <img class="object-none rounded-full w-96 mx-auto" src="{{ product.image.url }}">
+        {% endif %}
+        <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold">{{ product.description }}</p>
+    </div>
+    {% endfor %}
+<!-- 2x2 rounded images with title above -->
+<!-- description of each product under -->
+    <button class="bg-blue-800 hover:bg-black text-white font-bold py-2 px-4 my-12 rounded border"><ahref="https://ko-fi.com/bewdleyspirits/shop">Our Store</a></button>
+</div>
 {%endblock%}

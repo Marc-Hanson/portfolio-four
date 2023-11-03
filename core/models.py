@@ -41,9 +41,9 @@ class Review(models.Model):
 
 
 class Product(models.Model):
-    featured_image = CloudinaryField('image', default='placeholder')
+    image = CloudinaryField('image', default='placeholder')
     title = models.CharField(max_length=90, unique=True)
-    description = models.CharField(max_length=200, unique=True)
+    description = models.CharField(max_length=200)
 
     class Meta:
         ordering = ['title']
