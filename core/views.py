@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-=======
-from django.shortcuts import render
->>>>>>> 783a447edc49da106769be58ac8d225c43370247
-from django.views import generic, View
+from django.views import generic
 from django.views.generic import ListView
-from .models import Event, Review
-
-class Home(View):
-    pass
+from core.models import Event, Review
 
 
 class EventList(generic.ListView):
@@ -20,4 +13,4 @@ class ReviewList(generic.ListView):
     model = Review
     queryset = Review.objects.order_by('-created_on')
     template_name = 'about.html'
-    #paginate_by = 1
+    paginate_by = 1
