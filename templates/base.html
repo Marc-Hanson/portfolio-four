@@ -25,10 +25,10 @@
         <div>
             <h2 class="text-5xl font-bold"><a href="{% url 'home' %}" class="hover:text-blue-400 transition-colors duration-300 logo-style">Bewdley Spirits</a></h2>
         </div>
-<!-- /End Logo -->
+<!-- End Logo -->
         <div class="mt-5 md:mt-0">
             <ul class="flex flex-col md:flex-row md:space-x-5 w-full items-center">
-                <li><a class="font-semibold tracking-tight block cursor-pointer p-2 hover:text-blue-400 transition-colors duration-300">Our Products</a></li>
+                <li><a class="font-semibold tracking-tight block cursor-pointer p-2 hover:text-blue-400 transition-colors duration-300" href="{% url 'products' %}">Our Products</a></li>
                 <li><a class="font-semibold tracking-tight block cursor-pointer p-2 hover:text-blue-400 transition-colors duration-300" href="https://ko-fi.com/bewdleyspirits/shop">Shop Merch</a></li>
                 <li><a class="font-semibold tracking-tight block cursor-pointer p-2 hover:text-blue-400 transition-colors duration-300" href="{% url 'about' %}">About Us</a></li>
                 {% if user.is_authenticated %}

@@ -1,6 +1,7 @@
+from django.shortcuts import render
 from django.views import generic
 from django.views.generic import ListView
-from core.models import Event, Review
+from core.models import Event, Review, Product
 
 
 class EventList(generic.ListView):
@@ -14,3 +15,10 @@ class ReviewList(generic.ListView):
     queryset = Review.objects.order_by('-created_on')
     template_name = 'about.html'
     paginate_by = 1
+
+
+class ProductList(generic.ListView):
+    model = Product
+    queryset = Event.objects.order_by('title')
+    template_name = 'products.html'
+    paginate_by = 2
