@@ -31,8 +31,7 @@ CSRF_TRUSTED_ORIGINS = ['https://*.codeanyapp.com']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-marc-hanson-portfolio-fo-iixiwi2j4y.us2.codeanyapp.com',
-                 'marc-hanson-portfolio-four-717bb8dbff17.herokuapp.com']
+ALLOWED_HOSTS = ['8000-marc-hanson-portfolio-fo-b41ok3gos4.us2.codeanyapp.com']
 
 
 # Application definition
