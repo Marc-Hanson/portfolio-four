@@ -21,3 +21,18 @@ class ProductList(generic.ListView):
     model = Product
     queryset = Product.objects.order_by('title')
     template_name = 'products.html'
+
+
+def LeaveReview(request, *args, **kwargs):
+    username = None
+    if request.user.is_authenticated():
+        if request.method == 'POST':
+            title = request.POST['title']
+            stars = request.POST['stars']
+            content = request.POST['content']
+            author = request.user
+
+            new_review = Review(title=title, stars=stars, content=content, author=author, approved=False)
+            new_review.save()
+
+            return render(request, 'LeaveReview', {})

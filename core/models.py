@@ -3,15 +3,6 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-class StarRating(models.IntegerChoices):
-    ZERO = 0, 'Zero'
-    ONE = 1, 'One'
-    TWO = 2, 'Two'
-    THREE = 3, 'Three'
-    FOUR = 4, 'Four'
-    FIVE = 5, 'Five'
-
-
 class Event(models.Model):
     title = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
@@ -23,6 +14,15 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class StarRating(models.IntegerChoices):
+    ZERO = 0, 'Zero'
+    ONE = 1, 'One'
+    TWO = 2, 'Two'
+    THREE = 3, 'Three'
+    FOUR = 4, 'Four'
+    FIVE = 5, 'Five'
 
 
 class Review(models.Model):
