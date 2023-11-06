@@ -1,3 +1,8 @@
+{% extends "base.html" %}
+{% block head_title %} Review {% endblock %}
+{% block content %}
+<div class="py-44 w-full bg-gray-800 bg-opacity-60 text-center">
+<h1 class="logo-style text-7xl py-10 mx-auto text-white">Our Products</h1>
 <form action="/review/" method="POST" class="w-full max-w-lg mx-auto">
     {% csrf_token %}
     <!-- title of review -->
@@ -6,7 +11,9 @@
             <label class="block uppercase tracking-wide text-white text-xl font-bold mb-2" for="title">
                 Review Title
             </label>
-            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="title" name="title" type="text">
+            <input
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="title" name="title" type="text">
             <p class="text-white text-sm italic">Please enter a title for your review</p>
         </div>
     </div>
@@ -47,3 +54,5 @@
         </div>
     </div>
 </form>
+</div>
+{%endblock%}

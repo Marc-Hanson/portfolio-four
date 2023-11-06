@@ -24,15 +24,20 @@ class ProductList(generic.ListView):
 
 
 def LeaveReview(request, *args, **kwargs):
+    model = Review
     username = None
-    if request.user.is_authenticated():
-        if request.method == 'POST':
-            title = request.POST['title']
-            stars = request.POST['stars']
-            content = request.POST['content']
-            author = request.user
+    if request.method == 'POST':
+        title = request.POST['title']
+        stars = request.POST['stars']
+        content = request.POST['content']
+        author = request.user
 
-            new_review = Review(title=title, stars=stars, content=content, author=author, approved=False)
-            new_review.save()
+        new_review = Review(title=title, stars=stars, content=content, author=author, approved=False)
+        new_review.save()
 
-            return render(request, 'LeaveReview', {})
+        return render(request, 'your_review.html', {
+            'title': title,
+            'stars': stars,
+            'content': content,
+        })
+

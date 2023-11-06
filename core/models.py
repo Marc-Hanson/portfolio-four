@@ -26,9 +26,9 @@ class StarRating(models.IntegerChoices):
 
 
 class Review(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=99, null=False, blank=False)
     stars = models.IntegerField(default=StarRating.FIVE, choices=StarRating.choices)
-    content = models.TextField()
+    content = models.TextField(max_length=500, null=False, blank=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
