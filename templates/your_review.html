@@ -4,7 +4,7 @@
 <div class="py-24 w-full bg-gray-800 bg-opacity-60 text-center">
     <h5 class="font-bold text-3xl pb-2 mx-auto text-white">Thank you for your review!</h5>
     <p class="px-4 py-2 pb-24 lg:max-w-2xl mx-auto text-xl font-bold text-white">While awaiting admin approval, you can edit or delete your review below.</p>
-    <form action="/review/" method="POST" class="w-full max-w-lg mx-auto">
+    <form method="POST" class="w-full max-w-lg mx-auto">
         {% csrf_token %}
         <!-- title of review -->
         <div class="flex flex-wrap -mx-3 mb-6">
@@ -47,11 +47,11 @@
         <!-- submit button -->
         <div class="md:flex md:items-center">
             <div class="md:w-1/3 mx-auto">
-                <input type="submit" value="Update"
+                <input type="submit" value="Update" formaction="/update/"
                     class="bg-blue-800 hover:bg-black text-white font-bold py-2 px-4 mt-12 rounded border"></button>
             </div>
             <div class="md:w-1/3 mx-auto">
-                <input type="submit" value="Delete" action="/delete/" class="bg-black hover:bg-blue-800 text-white font-bold py-2 px-4 mt-12 rounded border"></button>
+                <input type="submit" value="Delete" formaction="/delete/" class="bg-black hover:bg-blue-800 text-white font-bold py-2 px-4 mt-12 rounded border"></button>
             </div>
         </div>
     </form>

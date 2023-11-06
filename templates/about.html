@@ -16,16 +16,20 @@
                 filled by hand and wax
                 dipped to ensure quality every time.</p>
             <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold">Richard & Sarah Hanson started the business in
-                2023 **MORE INFORMATION ABOUT RICH&SARAH**</p>
+                2023 from their home in Bewdley, after meeting at school and being married for 30 years they have a very strong foundation.</p>
         </div>
     </div>
 </div>
 <!-- testimonials -->
-<div class="col-start-1 row-start-1 bg-white bg-opacity-60 w-full h-full text-center">
+<div class="col-start-1 row-start-1 bg-white bg-opacity-60 w-full h-full text-center pb-4">
     {% include 'carousel.html' %}
 </div>
 <!-- leave a review -->
-{% if user.is_authenticated %}
+{% if user.review %}
+<div class="py-24 w-full bg-gray-800 bg-opacity-60 text-center">
+    <button class="bg-blue-800 hover:bg-black text-white font-bold py-2 px-4 my-12 rounded border"><a href="/update/">Your Review</a></button>
+</div>
+{% elif user.is_authenticated %}
 <div class="py-44 w-full bg-gray-800 bg-opacity-60 text-center">
     {% include 'form.html' %}
 </div>

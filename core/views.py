@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from django.views import generic
 from django.views.generic import ListView
 from core.models import Event, Review, Product
@@ -23,22 +23,41 @@ class ProductList(generic.ListView):
     template_name = 'products.html'
 
 
-def LeaveReview(request, *args, **kwargs):
+def LeaveReview(request):
     if request.method == 'POST':
         title = request.POST['title']
         stars = request.POST['stars']
         content = request.POST['content']
         author = request.user
+        user_review = Review(title=title, stars=stars, content=content, author=author, approved=False)
+        user_review.save()
+        return render(request, 'your_review.html', {'title': title, 'content': content})
+    else:
+        return redirect('home')
 
-        new_review = Review(title=title, stars=stars, content=content, author=author, approved=False)
-        new_review.save()
 
-        return render(request, 'your_review.html', {'title': title,'content': content,})
+def UpdateReview(request):
+    if request.method == 'GET':
+        user_review = get_object_or_404(Review, author=request.user)
+        title = user_review.title
+        content = user_review.content
+        return render(request, 'your_review.html', {'title': title, 'content': content})
+    
+    elif request.method == 'POST':
+        user_review = get_object_or_404(Review, author=request.user)
+        if user_review.author == request.user:
+            user_review.delete()
+            title = request.POST['title']
+            stars = request.POST['stars']
+            content = request.POST['content']
+            author = request.user
+            user_review = Review(title=title, stars=stars, content=content, author=author, approved=False)
+            user_review.save()
+        return render(request, 'your_review.html', {'title': title, 'content': content})
 
 
-def DeleteReview(request, LeaveReview):
-    if request.method == 'POST':
-        new_review = get_object_or_404(LeaveReview)
-        if new_review.author == request.user:
-            new_review.delete()
-            return redirect("home")
+def DeleteReview(request):
+    user_review = get_object_or_404(Review, author=request.user)
+    if user_review.author == request.user:
+        user_review.delete()
+        return redirect('home')

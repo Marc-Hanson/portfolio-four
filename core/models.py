@@ -29,9 +29,10 @@ class Review(models.Model):
     title = models.CharField(max_length=255)
     stars = models.IntegerField(default=StarRating.FIVE, choices=StarRating.choices)
     content = models.TextField()
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.OneToOneField(User, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
+
 
     class Meta:
         ordering = ['-created_on']

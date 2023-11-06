@@ -7,5 +7,6 @@ urlpatterns = [
     path('about/', views.ReviewList.as_view(), name='about'),
     path('products/', views.ProductList.as_view(), name='products'),
     path('review/', views.LeaveReview, name='leave_review'),
+    path('update/', views.UpdateReview, name='update_review'),
     path('delete/', views.DeleteReview, name='delete_review'),
 ]
