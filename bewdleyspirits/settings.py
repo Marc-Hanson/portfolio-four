@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 CSRF_TRUSTED_ORIGINS = ['https://*.codeanyapp.com']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-marc-hanson-portfolio-fo-b41ok3gos4.us2.codeanyapp.com']
 
