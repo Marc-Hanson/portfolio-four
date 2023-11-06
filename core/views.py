@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from django.views.generic import ListView
 from core.models import Event, Review, Product
@@ -14,7 +14,7 @@ class ReviewList(generic.ListView):
     model = Review
     queryset = Review.objects.order_by('-created_on')
     template_name = 'about.html'
-    paginate_by = 4
+    paginate_by = 3
 
 
 class ProductList(generic.ListView):
@@ -24,8 +24,6 @@ class ProductList(generic.ListView):
 
 
 def LeaveReview(request, *args, **kwargs):
-    model = Review
-    username = None
     if request.method == 'POST':
         title = request.POST['title']
         stars = request.POST['stars']
@@ -35,9 +33,12 @@ def LeaveReview(request, *args, **kwargs):
         new_review = Review(title=title, stars=stars, content=content, author=author, approved=False)
         new_review.save()
 
-        return render(request, 'your_review.html', {
-            'title': title,
-            'stars': stars,
-            'content': content,
-        })
+        return render(request, 'your_review.html', {'title': title,'content': content,})
 
+
+def DeleteReview(request, LeaveReview):
+    if request.method == 'POST':
+        new_review = get_object_or_404(LeaveReview)
+        if new_review.author == request.user:
+            new_review.delete()
+            return redirect("home")

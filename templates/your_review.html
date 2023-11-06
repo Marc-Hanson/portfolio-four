@@ -1,58 +1,59 @@
 {% extends "base.html" %}
 {% block head_title %} Review {% endblock %}
 {% block content %}
-<div class="py-44 w-full bg-gray-800 bg-opacity-60 text-center">
-<h1 class="logo-style text-7xl py-10 mx-auto text-white">Our Products</h1>
-<form action="/review/" method="POST" class="w-full max-w-lg mx-auto">
-    {% csrf_token %}
-    <!-- title of review -->
-    <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3">
-            <label class="block uppercase tracking-wide text-white text-xl font-bold mb-2" for="title">
-                Review Title
-            </label>
-            <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="title" name="title" type="text">
-            <p class="text-white text-sm italic">Please enter a title for your review</p>
+<div class="py-24 w-full bg-gray-800 bg-opacity-60 text-center">
+    <h5 class="font-bold text-3xl pb-2 mx-auto text-white">Thank you for your review!</h5>
+    <p class="px-4 py-2 pb-24 lg:max-w-2xl mx-auto text-xl font-bold text-white">While awaiting admin approval, you can edit or delete your review below.</p>
+    <form action="/review/" method="POST" class="w-full max-w-lg mx-auto">
+        {% csrf_token %}
+        <!-- title of review -->
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full px-3">
+                <label class="block uppercase tracking-wide text-white text-xl font-bold mb-2" for="title">
+                    Review Title
+                </label>
+                <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="title" name="title" type="text" value="{{title}}">
+                <p class="text-white text-sm italic">Please enter a title for your review</p>
+            </div>
         </div>
-    </div>
-    <!-- stars out of five -->
-    <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3">
-            <label class="block uppercase tracking-wide text-white text-xl font-bold mb-2" for="stars">
-                Star Rating
-            </label>
-            <select name="stars" id="stars" class="text-black py-3 px-4 mb-3">
-                <option label="ZERO" value="0">0 - Zero Stars</option>
-                <option label="ONE" value="1">1 - One Star</option>
-                <option label="TWO" value="2">2 - Two Stars</option>
-                <option label="THREE" value="3">3 - Three Stars</option>
-                <option label="FOUR" value="4">4 - Four Stars</option>
-                <option label="FIVE" value="5" selected>5 - Five Stars</option>
-            </select>
-            <p class="text-white text-sm italic">Rate us from 0-5 Stars</p>
+        <!-- stars out of five -->
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full px-3">
+                <label class="block uppercase tracking-wide text-white text-xl font-bold mb-2" for="stars">
+                    Star Rating
+                </label>
+                <select name="stars" id="stars" class="text-black py-3 px-4 mb-3">
+                    <option label="ZERO" value="0">0 - Zero Stars</option>
+                    <option label="ONE" value="1">1 - One Star</option>
+                    <option label="TWO" value="2">2 - Two Stars</option>
+                    <option label="THREE" value="3">3 - Three Stars</option>
+                    <option label="FOUR" value="4">4 - Four Stars</option>
+                    <option label="FIVE" value="5" selected>5 - Five Stars</option>
+                </select>
+                <p class="text-white text-sm italic">Rate us from 0-5 Stars</p>
+            </div>
         </div>
-    </div>
-    <!-- review text -->
-    <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3">
-            <label class="block uppercase tracking-wide text-white text-xl font-bold mb-2" for="content">
-                Review
-            </label>
-            <textarea
-                class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
-                id="content" name="content"></textarea>
-            <p class="text-white text-sm italic">Please let us know how we're doing!</p>
+        <!-- review text -->
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full px-3">
+                <label class="block uppercase tracking-wide text-white text-xl font-bold mb-2" for="content">
+                    Review
+                </label>
+                <textarea class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="content" name="content">{{content}}</textarea>
+                <p class="text-white text-sm italic">Please let us know how we're doing!</p>
+            </div>
         </div>
-    </div>
-    <!-- submit button -->
-    <div class="md:flex md:items-center">
-        <div class="md:w-1/3 mx-auto">
-            <input type="submit" value="Submit"
-                class="bg-blue-800 hover:bg-black text-white font-bold py-2 px-4 mt-12 rounded border"></button>
+        <!-- submit button -->
+        <div class="md:flex md:items-center">
+            <div class="md:w-1/3 mx-auto">
+                <input type="submit" value="Update"
+                    class="bg-blue-800 hover:bg-black text-white font-bold py-2 px-4 mt-12 rounded border"></button>
+            </div>
+            <div class="md:w-1/3 mx-auto">
+                <input type="submit" value="Delete" action="/delete/" class="bg-black hover:bg-blue-800 text-white font-bold py-2 px-4 mt-12 rounded border"></button>
+            </div>
         </div>
-    </div>
-</form>
+    </form>
 </div>
 {%endblock%}
