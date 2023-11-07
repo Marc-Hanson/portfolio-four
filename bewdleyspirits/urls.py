@@ -15,9 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import handler404, handler500, handler403, handler400
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('core.urls'), name="core_urls"),
 ]
+
+handler404 = 'core.views.custom_page_not_found_view'
+handler500 = 'core.views.custom_error_view'
+handler403 = 'core.views.custom_permission_denied_view'
+handler400 = 'core.views.custom_bad_request_view'
