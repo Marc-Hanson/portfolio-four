@@ -25,14 +25,15 @@
     {% include 'carousel.html' %}
 </div>
 <!-- leave a review -->
-{% if user.review %}
-<div class="py-24 w-full bg-gray-800 bg-opacity-60 text-center">
-    <button class="bg-blue-800 hover:bg-black text-white font-bold py-2 px-4 my-12 rounded border"><a href="/update/">Your Review</a></button>
-</div>
-{% elif user.is_authenticated %}
-<div class="py-44 w-full bg-gray-800 bg-opacity-60 text-center">
-    {% include 'form.html' %}
+<div id="feedback">
+    {% if user.review %}
+    <div class="py-24 w-full bg-gray-800 bg-opacity-60 text-center">
+        <button class="bg-blue-800 hover:bg-black text-white font-bold py-2 px-4 my-12 rounded border"><a href="/update/">Your Review</a></button>
+    </div>
+    {% elif user.is_authenticated %}
+    <div class="py-44 w-full bg-gray-800 bg-opacity-60 text-center">
+        {% include 'form.html' %}
+    </div>
 </div>
 {% endif %}
-</div>
 {%endblock%}

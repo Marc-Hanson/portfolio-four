@@ -35,10 +35,13 @@
                 <li><a class="font-semibold tracking-tight block cursor-pointer p-2 hover:text-blue-400 transition-colors duration-300"
                         href="{% url 'products' %}">Our Products</a></li>
                 <li><a class="font-semibold tracking-tight block cursor-pointer p-2 hover:text-blue-400 transition-colors duration-300"
-                        href="https://ko-fi.com/bewdleyspirits/shop">Shop Merch</a></li>
+                        href="https://ko-fi.com/bewdleyspirits/shop" target="_blank">Shop Merch</a></li>
                 <li><a class="font-semibold tracking-tight block cursor-pointer p-2 hover:text-blue-400 transition-colors duration-300"
                         href="{% url 'about' %}">About Us</a></li>
                 {% if user.is_authenticated %}
+                <li class="nav-item"><a
+                        class="font-semibold tracking-tight block cursor-pointer p-2 hover:text-blue-400 transition-colors duration-300"
+                        href="{% url 'about' %}#feedback">Feedback</a></li>
                 <li class="nav-item"><a
                         class="font-semibold tracking-tight block cursor-pointer p-2 hover:text-blue-400 transition-colors duration-300"
                         href="{% url 'account_logout' %}">Logout</a></li>
@@ -64,14 +67,14 @@
         <div class="max-w-screen-xl pt-4 mx-auto sm:px-6 lg:px-8">
             <div class="sm:flex sm:items-center sm:justify-between">
                 <p class="mt-4text-sm text-center text-gray-400 lg:text-left lg:mt-0">
-                    <a href="#"><i
+                    <a href="https://www.facebook.com/people/Bewdley-Spirits/100095296427083/" target="_blank"><i
                             class="fa-brands fa-square-facebook fa-2xl text-white hover:text-blue-400 transition-colors duration-300"></i></a>
                 </p>
                 <div class="flex justify-center sm:justify-start px-10">
                     <img src="{% static 'images/ghost.webp' %}" width="50" height="50" />
                 </div>
                 <p class="mt-4text-sm text-center text-gray-400 lg:text-right lg:mt-0">
-                    <a href="#"><i
+                    <a href="https://www.instagram.com/bewdley_spirits/" target="_blank"><i
                             class="fa-brands fa-instagram fa-2xl text-white hover:text-blue-400 transition-colors duration-300"></i></a>
                 </p>
             </div>
