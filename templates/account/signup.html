@@ -1,16 +1,16 @@
 {% extends "base.html" %}
-{% load allauth i18n socialaccount %}
+{% load allauth i18n %}
 {% block head_title %}
     {% trans "Signup" %}
 {% endblock head_title %}
 {% block content %}
-    <div class="py-44 w-full">
-        <div class="lg:w-2/5 mx-auto my-4 h-100 rounded shadow-2xl text-center justify-around bg-blue-400 flex flex-col border-double border-4 border-blue-800 p-4">
-            {% element h1 %}
+    <div class="lg:py-44 w-full">
+        <div class="lg:w-2/5 mx-auto my-4 h-fit rounded shadow-2xl text-center justify-around bg-blue-400 flex flex-col border-double border-4 border-blue-800 p-4">
+            <h1 class="block tracking-wide text-white text-2xl font-bold mb-2">
                 {% trans "Sign Up" %}
-            {% endelement %}
+            </h1>
             <p>
-                {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+                {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}"><strong>sign in</strong></a>.{% endblocktrans %}
             </p>
             {% url 'account_signup' as action_url %}
             {% element form form=form method="post" action=action_url tags="entrance,signup" %}

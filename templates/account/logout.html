@@ -1,14 +1,14 @@
-{% extends "account/base_manage.html" %}
+{% extends "base.html" %}
 {% load allauth i18n %}
 {% block head_title %}
     {% trans "Sign Out" %}
 {% endblock head_title %}
 {% block content %}
-    <div class="py-44 w-full">
-        <div class="lg:w-2/5 mx-auto my-4 h-100 rounded shadow-2xl text-center justify-around bg-blue-400 flex flex-col border-double border-4 border-blue-800 p-4">
-        {% element h1 %}
+    <div class="lg:py-72 w-full">
+        <div class="lg:w-2/5 mx-auto my-4 h-fit rounded shadow-2xl text-center justify-around bg-blue-400 flex flex-col border-double border-4 border-blue-800 p-4">
+        <h1 class="block tracking-wide text-white text-2xl font-bold mb-2">
             {% trans "Sign Out" %}
-        {% endelement %}
+        </h1>
         <p>{% trans 'Are you sure you want to sign out?' %}</p>
         {% url 'account_logout' as action_url %}
         {% element form method="post" action=action_url no_visible_fields=True %}
@@ -21,9 +21,9 @@
                 {% endif %}
             {% endslot %}
             {% slot actions %}
-                {% element button type="submit" %}
+                <button type="submit" tags="prominent,login" class="bg-blue-800 hover:bg-black text-white font-bold py-2 px-4 m-10 rounded border">
                     {% trans 'Sign Out' %}
-                {% endelement %}
+                </button>
             {% endslot %}
         {% endelement %}
         </div>
