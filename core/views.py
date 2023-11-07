@@ -14,7 +14,7 @@ class ReviewList(generic.ListView):
     model = Review
     queryset = Review.objects.order_by('-created_on')
     template_name = 'about.html'
-    paginate_by = 3
+    paginate_by = 2
 
 
 class ProductList(generic.ListView):
