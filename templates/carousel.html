@@ -6,11 +6,11 @@
         <!-- review card -->
         <div class="lg:w-2/5 w-1/2 my-10 mx-auto rounded shadow-2xl text-center lg:justify-around bg-blue-400 flex border-double border-4 border-blue-800 p-4">
             <div class="flex w-full flex-col gap-0.5">
-                <div class="flex items-center justify-between">
+                <div class="md:flex sm:block items-center justify-between">
                     <h5
                         class="block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                         "{{ review.title }}"</h5>
-                    <div class="5 flex items-center gap-0">
+                    <div class="5 block items-center gap-0">
                         {% if review.stars == 5 %} <p class="text-yellow-400 text-2xl">★★★★★</p>
                         {% elif review.stars == 4 %} <p class="text-yellow-400 text-2xl">☆★★★★</p>
                         {% elif review.stars == 3 %} <p class="text-yellow-400 text-2xl">☆☆★★★</p>
