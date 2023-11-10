@@ -1,3 +1,10 @@
+.background-style {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .logo-style {
     font-family: 'Kaushan Script', cursive;
 }
