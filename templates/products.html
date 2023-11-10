@@ -13,7 +13,7 @@
             {% if "placeholder" in post.featured_image.url %}
             <img class="mx-auto px-20" src="/static/images/logo_full.webp">
             {% else %}
-            <img class="mx-auto px-20" src=" {{ product.image.url }}">
+            <img class="mx-auto px-20" src=" {{ product.image.url }}" alt="A label from a Bewdley Spirits bottle with a small ghost logo.">
             {% endif %}
             <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold text-white">{{ product.description }}</p>
         </div>
@@ -24,7 +24,7 @@
             {% if "placeholder" in post.featured_image.url %}
             <img class="mx-auto px-20" src="/static/images/logo_full.webp">
             {% else %}
-            <img class="mx-auto px-20" src=" {{ product.image.url }}">
+            <img class="mx-auto px-20" src=" {{ product.image.url }}" alt="A label from a Bewdley Spirits bottle with a small ghost logo.">
             {% endif %}
             <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold text-white">{{ product.description }}</p>
         </div>

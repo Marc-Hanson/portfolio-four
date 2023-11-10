@@ -1,32 +1,52 @@
-{% extends "base.html" %}
-{% block head_title %} About {% endblock %}
-{% block content %}
+{% extends "base.html" %} {% block head_title %} About {% endblock %} {% block
+content %}
 <!-- about us content -->
 <div class="h-max text-white text-center grid bg-cover">
-    <div class="col-start-1 row-start-1 bg-gray-800 bg-opacity-60 w-full h-full">
-        <div class="col-start-1 row-start-1 mx-auto my-auto py-40">
-            <h1 class="font-bold text-5xl pb-2 mx-auto">About Us</h1>
-            <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold">Bewdley Spirits is a small craft distillery based on the banks of the River Severn, in the heart of England in the historic Georgian town of Bewdley, Worcestershire.</p>
-            <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold">Lets tell you a little more about us...</p>
-            <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold">We are located at the award winning Bewdley Brewery and all spirits produced are made from beers produced onsite at the Brewery. All spirits are distilled and double-filtered to create a smooth clean finish. Each bottle is filled by hand and wax dipped to ensure quality every time.</p>
-            <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold">Richard & Sarah Hanson started the business in 2023 from their home in Bewdley, after meeting at school and being married for 30 years they have a very strong foundation.</p>
-        </div>
+  <div class="col-start-1 row-start-1 bg-gray-800 bg-opacity-60 w-full h-full">
+    <div class="col-start-1 row-start-1 mx-auto my-auto py-40">
+      <h1 class="font-bold text-5xl pb-2 mx-auto">About Us</h1>
+      <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold">
+        Bewdley Spirits is a small craft distillery based on the banks of the
+        River Severn, in the heart of England in the historic Georgian town of
+        Bewdley, Worcestershire.
+      </p>
+      <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold">
+        Lets tell you a little more about us...
+      </p>
+      <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold">
+        We are located at the award winning Bewdley Brewery and all spirits
+        produced are made from beers produced onsite at the Brewery. All spirits
+        are distilled and double-filtered to create a smooth clean finish. Each
+        bottle is filled by hand and wax dipped to ensure quality every time.
+      </p>
+      <p class="px-4 py-2 lg:max-w-2xl mx-auto text-xl font-bold">
+        Richard & Sarah Hanson started the business in 2023 from their home in
+        Bewdley, after meeting at school and being married for 30 years they
+        have a very strong foundation.
+      </p>
     </div>
+  </div>
 </div>
 <!-- testimonials -->
-<div class="col-start-1 row-start-1 bg-white bg-opacity-60 w-full h-full text-center pb-4">
-    {% include 'carousel.html' %}
+<div
+  class="col-start-1 row-start-1 bg-white bg-opacity-60 w-full h-full text-center pb-4"
+>
+  {% include 'carousel.html' %}
 </div>
 <!-- review content -->
 <div id="feedback">
-    {% if user.review %}
-    <div class="py-24 w-full bg-gray-800 bg-opacity-60 text-center">
-        <button class="bg-blue-800 hover:bg-black text-white font-bold py-2 px-4 my-12 rounded border"><a href="/update/">Your Review</a></button>
-    </div>
-    {% elif user.is_authenticated %}
-    <div class="py-44 w-full bg-gray-800 bg-opacity-60 text-center">
-        {% include 'form.html' %}
-    </div>
+  {% if user.review %}
+  <div class="py-24 w-full bg-gray-800 bg-opacity-60 text-center">
+    <button
+      class="bg-blue-800 hover:bg-black text-white font-bold py-2 px-4 my-12 rounded border"
+    >
+      <a href="/update/">Your Review</a>
+    </button>
+  </div>
+  {% elif user.is_authenticated %}
+  <div class="py-44 w-full bg-gray-800 bg-opacity-60 text-center">
+    {% include 'form.html' %}
+  </div>
+  {% endif %}
 </div>
-{% endif %}
 {%endblock%}
