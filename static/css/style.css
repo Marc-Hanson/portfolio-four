@@ -1,3 +1,11 @@
+.background {
+    background-image: url("https://res.cloudinary.com/dldkvvyrw/image/upload/f_auto,q_auto/v1/static/images/logo_full.3d12ebe26923");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
 .logo-style {
     font-family: 'Kaushan Script', cursive;
 }

@@ -29,11 +29,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 CSRF_TRUSTED_ORIGINS = ['https://*.codeanyapp.com']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 x_FRAME_OPTIONS = 'SAMEORIGINS'
 
-ALLOWED_HOSTS = ['8000-marc-hanson-portfolio-fo-0jnvbyunqg.us2.codeanyapp.com',
+ALLOWED_HOSTS = ['8000-marc-hanson-portfolio-fo-mmx197al8i.us2.codeanyapp.com',
                  'portfolio-four-de53c67a8b9a.herokuapp.com']
 
 
