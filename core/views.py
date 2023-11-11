@@ -70,17 +70,17 @@ def DeleteReview(request):
         return redirect('home')
 
 
-def custom_page_not_found_view(request, exception):
+def return_404(request, exception):
     return render(request, "errors/404.html", {})
 
 
-def custom_error_view(request, exception=None):
+def return_500(request, exception=None):
     return render(request, "errors/500.html", {})
 
 
-def custom_permission_denied_view(request, exception=None):
+def return_403(request, exception=None):
     return render(request, "errors/403.html", {})
 
 
-def custom_bad_request_view(request, exception=None):
+def return_400(request, exception=None):
     return render(request, "errors/400.html", {})

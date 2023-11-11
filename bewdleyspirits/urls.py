@@ -23,7 +23,7 @@ urlpatterns = [
     path('', include('core.urls'), name="core_urls"),
 ]
 
-handler404 = 'core.views.custom_page_not_found_view'
-handler500 = 'core.views.custom_error_view'
-handler403 = 'core.views.custom_permission_denied_view'
-handler400 = 'core.views.custom_bad_request_view'
+handler400 = 'core.views.return_400'
+handler403 = 'core.views.return_403'
+handler404 = 'core.views.return_404'
+handler500 = 'core.views.return_500'
