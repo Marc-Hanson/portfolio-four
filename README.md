@@ -270,3 +270,4 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 - The products, brands, names and artwork used in this site are all family owned and permission was gained before their use.
 - Inspiration and knowledge was taken from the Code Institute 'I think Therefore I Blog' project.
 - CSS templating and ideas from [**Tailwind Components**](https://tailwindcomponents.com/).
+- [**Dumbfounds YouTube**](https://www.youtube.com/playlist?list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM) playlist on Django testing for extra help on automated testing.
