@@ -29,9 +29,11 @@ def LeaveReview(request):
         stars = request.POST['stars']
         content = request.POST['content']
         author = request.user
-        user_review = Review(title=title, stars=stars, content=content, author=author, approved=False)
+        user_review = Review(title=title, stars=stars, content=content,
+                             author=author, approved=False)
         user_review.save()
-        return render(request, 'your_review.html', {'title': title, 'content': content})
+        return render(request, 'your_review.html',
+                      {'title': title, 'content': content})
 
 
 def UpdateReview(request):
@@ -40,7 +42,7 @@ def UpdateReview(request):
         title = user_review.title
         content = user_review.content
         return render(request, 'your_review.html', {'title': title,
-                        'content': content})
+                      'content': content})
 
     elif request.method == 'POST':
         user_review = get_object_or_404(Review, author=request.user)
@@ -51,10 +53,10 @@ def UpdateReview(request):
             content = request.POST['content']
             author = request.user
             user_review = Review(title=title, stars=stars, content=content,
-                                    author=author, approved=False)
+                                 author=author, approved=False)
             user_review.save()
-            return render(request, 'your_review.html', {'title': title, 
-                            'content': content})
+            return render(request, 'your_review.html', {'title': title,
+                          'content': content})
         else:
             return redirect('home')
 

@@ -22,10 +22,10 @@ PostgreSQL was used as my database management system, via ElephantSQL, to instal
   - [**User Experience**](#user-experience)
   - [**User Stories**](#user-stories)
   - [**Design and Scope**](#design-and-scope)
-    - [Agile Approach](#agile-approach)
-    - [Wireframes](#wireframes)
-    - [Database Schema](#database-schema)
-    - [UI Design Changes](#ui-design-changes)
+    - [*Agile Approach*](#agile-approach)
+    - [*Wireframes*](#wireframes)
+    - [*Database Schema*](#database-schema)
+    - [*UI Design Changes*](#ui-design-changes)
   - [**Features**](#features)
     - [*Existing Features*](#existing-features)
     - [*Security Features and Admin Functionality*](#security-features-and-admin-functionality)
@@ -88,15 +88,15 @@ The following user stories were created for all three types of user.
 
 The scope of the project was to build a MVP with as extras as possible, if time permitted, and the user stories were used as a guide for this.
 
-### Agile Approach
+### *Agile Approach*
 
 Each of the fourteen user stories were written as "issues" in Github and mapped to a Kanban Board ("Bewdley Spirits" attached as a Github project in my repository). The user stories labelled  "must have" for the MVP were completed within my first iteration, so that by the end of the first Agile sprint, a workable app with CRUD functionality had been produced. The user stories labelled "should have" were completed after the 'must have' functionalities were in place, and 'could have' user stoies are planned for the next iteration of this app. The "won't have" user story tasks are planned for later completion as they are currently beyond my scope, this project will be ongoing as it is for use outside of my Code Institute Diploma.
 
 This project was time-managed by setting due-dates for each user story and allowing extra time for unforseen issues and experimenting. Both Code Institute blog projects were used as rough time frames as to how long each part of my page would take.
 
-### Wireframes
+### *Wireframes*
 
-The basic **wireframes** are available as five PNG files; the first which shows the initial landing page and header, which is the first page that loads on the site.
+The basic wireframes are available as five PNG files; the first which shows the initial landing page and header, which is the first page that loads on the site.
 
 ![wireframe top of page](/static/images/readme/wireframe-header.png)
 
@@ -116,7 +116,7 @@ And a products page would feature 2 products side by side with the product name 
 
 ![wireframe products](/static/images/readme/wireframe-products.png)
 
-### Database Schema
+### *Database Schema*
 
 I created the simplest possible database schema for my app, and the corresponding entity relationship diagram below was drawn using QuickDatabaseDiagrams based around the classes to be used. Beyond the units employed from Django, all models (in models.py) were created from scratch and cover reviews being created, read, updated and deleted as well as two classes just for admin use to display information on the page. I used class-based views, as taught in the Code Institute lessons on creating the blog "I think therefore I blog" (in views.py).
 
@@ -124,7 +124,7 @@ I created the simplest possible database schema for my app, and the correspondin
 
 As everything in this project was original and custom, writing both the models and views was a learning experience and many changes were made as I got to grasp with Djangos MVT architecture.
 
-### UI Design Changes
+### *UI Design Changes*
 
 Initially the site was planned to use the colour palette from the companies labels. But very early on this was scrapped as the site felt messy and unclear. The black and white company logo was used as a fixed background along with a black and white header/footer. A blue hover state was later added to match other blue elements used on the app. I felt that using the logo as a wallpaper would help build the brand and tried to use a simplified version of this logo when ever possible.
 
@@ -230,10 +230,6 @@ Proposed future features:
 - psycopg2
 - dj3-cloudinary-storage
 - django-allauth
-- factory-boy (for testing only)
-- pytest-django (for testing only)
-- pytest-cov (for testing only)
-- pytest-factoryboy (for testing only)
 
 ## **Deployment**
 
@@ -274,4 +270,3 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 - The products, brands, names and artwork used in this site are all family owned and permission was gained before their use.
 - Inspiration and knowledge was taken from the Code Institute 'I think Therefore I Blog' project.
 - CSS templating and ideas from [**Tailwind Components**](https://tailwindcomponents.com/).
-- [**VeryAcademy YouTube**](https://www.youtube.com/watch?v=bIFVweK0hMc) video on Django testing for a deeper dive on django model testing.
