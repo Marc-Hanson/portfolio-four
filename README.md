@@ -194,9 +194,23 @@ Proposed future features:
 
 ### *Automated Testing*
 
+urls, models, views. for user experience. form input and crud all manual tested as time ran out.
+use forms.py and create, update, delete functions in seperate class next time.
+
 ### *Manual Testing*
 
+first full saack project, learing experience, spent time playing with code.
+understanding mvt and how they interact.
+form, extensive testing of data creation, retrieval and deletion. prepopulated form with user review.
+background image broken on deployment
+comment database out of env when testing
+
 ### *Validator Testing*
+html w3
+css w3
+pylint codeinstitute
+amiresponsive
+lighthouse + error
 
 ## **Technologies Used**
 
