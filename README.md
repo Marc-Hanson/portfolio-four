@@ -136,7 +136,7 @@ After my midway meeting with my mentor a Feedback button was introduced to the n
 
 ## **Features**
 
-There are three main pages to the Bewdley Spirits app, each with the "base" header and footer added. The"about" page appears altered with extra information on it for users that are logged in, which then shows the "form" page inside the "about" page. Or for users that have left a review, being shown a link to the "review" page in place of the "form". There are a number of features I would like to add in future to improve the app beyond the MVP level.
+There are three main pages to the Bewdley Spirits app, each with the "base" header and footer added. The"about" page appears altered with extra information on it for users that are logged in, which then shows the "form" page inside the "about" page. Or for users that have left a review, being shown a link to the "review" page in place of the "form". When the review form is posted via an update it will require admin approval again as added security to the site and to prevent advertising/spam. There are a number of features I would like to add in future to improve the app beyond the MVP level.
 
 ### *Existing Features*
 
@@ -233,9 +233,9 @@ During automated testing I received the following error, "Creating test database
 ![css_validation](/static/images/readme/css-w3.png)
 - .py files were passed through Code Institutes Python Linter.
 ![python_validation](/static/images/readme/python-linter.png)
--Lighthouse was also used to check the websites accessability.
+- Lighthouse was also used to check the websites accessability.
 ![lighthouse](/static/images/readme/lighthouse.png)
-The greatest issues caught by Lighthouse was deployment through Heroku.
+- The greatest issues caught by Lighthouse was deployment through Heroku.
 ![lighthouse_error](/static/images/readme/lighthouse-error.png)
 
 ## **Technologies Used**
