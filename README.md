@@ -1,6 +1,6 @@
 # **Bewdley Spirits**
 
-Bewdley Spirits is a full-stack project built to display products and upcoming events for the company of the same name. It has CRUD functionality for registered users, and a username and password ensures data privacy. The user authentication system chosen for this project was the django-allauth plugin, as Django is the framework I used to build the app.
+Bewdley Spirits is a full-stack project built to display products and upcoming events for the company of the same name. It has CRUD functionality for registered users, and a username and password ensures data privacy, email authentication is not yet enabled.  The user authentication system chosen for this project was the django-allauth plugin, as Django is the framework I used to build the app.
 
 The project was designed with a MVP project plan to keep the different aspects of it managable. I used an Agile orientated approach to developing the product and my kanban board can be found in my repo as an attached GitHub project called 'Bewdley Spirits'.
 
@@ -194,23 +194,48 @@ Proposed future features:
 
 ### *Automated Testing*
 
-urls, models, views. for user experience. form input and crud all manual tested as time ran out.
-use forms.py and create, update, delete functions in seperate class next time.
+I gave myself extra time during this project to play with automated testing and to try to develop a greater understanding. Because of this I have written tests for the apps 'urls.py', testing both the class based views and function based views resolve correctly. The apps 'models.py' was also tested using a setUp function with mock data to test that both of the admin models for creating events and products accepted data. As well as the user accessible review function was taking data and creating reviews as intended.
+When testing the apps 'views.py' the only checks done were that the pages loaded the correct template and that the server code was 200 for every page. Due to
+IDE issues over 9-11 November I ran short of time testing form inputs and custom error page handling. These were tested manually but no automated tests were created at this time.
+Ideally the app would have used a 'forms.py' to allow for form testing but all forms used in this project were rendered from a html template.
 
 ### *Manual Testing*
 
-first full saack project, learing experience, spent time playing with code.
-understanding mvt and how they interact.
-form, extensive testing of data creation, retrieval and deletion. prepopulated form with user review.
-background image broken on deployment
-comment database out of env when testing
+This was my first full stack pooject and as such I spent as much time playing with code as possible, testing how files work and how MVT projects files interact with each other. Everything in this project was built from scratch with a lot of trial and error, as such there were thousands of problems and fixes that were implemented along the way, the greatest of which are documented here. But as a learning experience I allowed myself to make many, many errors and to always try to fix the problem alone before searching for help on StackOverflow or the CodeInstitute slack channel.
+
+- base.html all navigation links work.
+- base.html all external links in footer work correctly.
+- index.html upcoming events all display correctly.
+- index.html external links were all tested and open correctly.
+- index.html shop button working and opens external link.
+- products.html all images display correctly and have alt text.
+- products.html shop button working and opens external link.
+- about.html displays reviews correctly.
+- about.html displays feedback section only to signed in users.
+- about.html form elements all working as expected.
+- you_review.html update and delete buttons working as expected.
+
+- Form
+This projects form was the biggest challenge I encountered during development. I chose to use a seperate html document for the form to make the code more verbose and allow me to syle all of it's components with tailwind to keep a uniform look across the site. I wanted reviews to be unique for users to keep the review area uncluttered, and to provide easy access for a user to their review for editing/updating. Seperate urls were created for users leaving their first review, updatng a current review or deleting their review. This solution isn't ideal and it's something I would like to change in the future, migrating the form to forms.py and refactoring the functions for leaving reviews. The form was tested, working and submitted for the first ireration of the app.
+
+- Images not displaying after deployment.
+After a deployment to Heroku my static image files were no longer displaying, after searching through Code Institutes Slack channels I found that several others had experienced the same issue. The easiest way to fix this was to change the 'background url' link in my html template and to set the background instead in my style.css file and use my cloudinary link. The image inside the footer was also fixed by using the cloudinary image instead of locally hosted files.
+
+- Using temporary local databases for testing.
+During automated testing I received the following error, "Creating test database for alias 'default'... Got an error creating the test database: permission denied to create database". This was caused by my database variables being defined in the apps env.py file and then changed in the apps settings.py. After searching through StackOverflow the easiest solution was to comment out the 'DATABSE_URL' inside the apps env.py file during testing to allow a temporary local database to be created, used and deleted. This line of code was uncommented again once testing had concluded.
 
 ### *Validator Testing*
-html w3
-css w3
-pylint codeinstitute
-amiresponsive
-lighthouse + error
+
+- HTML files were passed through W3 Validation with no errors found.
+![html_validation](/static/images/readme/html-w3.png)
+- CSS files were passed through W3 Validation with no errors found.
+![css_validation](/static/images/readme/css-w3.png)
+- .py files were passed through Code Institutes Python Linter.
+![python_validation](/static/images/readme/python-linter.png)
+-Lighthouse was also used to check the websites accessability.
+![lighthouse](/static/images/readme/lighthouse.png)
+The greatest issues caught by Lighthouse was deployment through Heroku.
+![lighthouse_error](/static/images/readme/lighthouse-error.png)
 
 ## **Technologies Used**
 
@@ -250,11 +275,11 @@ lighthouse + error
 The site was deployed to Heroku. The steps to deploy are as follows:
 
 - Install Django & Gunicorn:
-```pip install django gunicorn```
+```pip3 install django gunicorn```
 - Install Django database & psycopg:
 ```pip3 install dj_database_url psycopg2```
-- Install Cloudinary:
-```pip3 install dj3-cloudinary-storage```
+- Install Cloudinary & Django-allauth:
+```pip3 install dj3-cloudinary-storage django-allauth```
 - Create the requirements.txt file with the following command:
 ```pip3 freeze --local > requirements.txt```
 - Create a django project using:
@@ -266,10 +291,10 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 ```python3 manage.py migrate```
 - Navigate to [Heroku](www.heroku.com) & create a new app.
 - Navigate to the Settings Tab, to add the following key/value pairs to the configvars:
-  1. [SECRET_KEY] = randomkey
+  1. [SECRET_KEY] = **random key**
   2. [PORT] = 8000
-  3. [CLOUDINARY_URL] = API environment variable
-  4. [DATABASE_URL] = API environment variable
+  3. [CLOUDINARY_URL] = **api environment variable**
+  4. [DATABASE_URL] = **api environment variable**
 - Create an env.py file and import os.
 - Add the DATABASE_URL, SECRET_KEY & CLOUDINARY_URL to the env.py file.
 - Add the DATABASE_URL, SECRET_KEY & CLOUDINARY_URL to the settings.py file.
@@ -282,6 +307,8 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 ## **Acknowledgements and Credits**
 
 - The products, brands, names and artwork used in this site are all family owned and permission was gained before their use.
+- StackOverflow was a source of many answers during development.
+- CodeInstitutes slack channels were used for problem solving.
 - Inspiration and knowledge was taken from the Code Institute 'I think Therefore I Blog' project.
 - CSS templating and ideas from [**Tailwind Components**](https://tailwindcomponents.com/).
 - [**Dumbfounds YouTube**](https://www.youtube.com/playlist?list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM) playlist on Django testing for extra help on automated testing.
