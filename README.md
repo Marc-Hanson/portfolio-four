@@ -198,6 +198,7 @@ I gave myself extra time during this project to play with automated testing and 
 When testing the apps 'views.py' the only checks done were that the pages loaded the correct template and that the server code was 200 for every page. Due to
 IDE issues over 9-11 November I ran short of time testing form inputs and custom error page handling. These were tested manually but no automated tests were created at this time.
 Ideally the app would have used a 'forms.py' to allow for form testing but all forms used in this project were rendered from a html template.
+![automated testing](/static/images/readme/testing.png)
 
 ### *Manual Testing*
 
