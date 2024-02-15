@@ -32,8 +32,7 @@ DEBUG = False
 
 x_FRAME_OPTIONS = 'SAMEORIGINS'
 
-ALLOWED_HOSTS = ['8000-marc-hanson-portfolio-fo-uz0qtugf8l.us2.codeanyapp.com',
-                 'portfolio-four-de53c67a8b9a.herokuapp.com']
+ALLOWED_HOSTS = ['https://portfolio-four-1a8c026d6e2f.herokuapp.com/']
 
 
 # Application definition

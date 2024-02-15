@@ -4,7 +4,7 @@ Bewdley Spirits is a full-stack project built to display products and upcoming e
 
 The project was designed with a MVP project plan to keep the different aspects of it managable. I used an Agile orientated approach to developing the product and my kanban board can be found in my repo as an attached GitHub project called 'Bewdley Spirits'.
 
-The deployed site can be visited by clicking [**here**](https://portfolio-four-de53c67a8b9a.herokuapp.com/).
+The deployed site can be visited by clicking [**here**](https://portfolio-four-1a8c026d6e2f.herokuapp.com/).
 
 The site code can be viewed in this [**GitHub Repository**](https://github.com/Marc-Hanson/portfolio-four).
 
