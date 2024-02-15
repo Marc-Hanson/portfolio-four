@@ -32,7 +32,7 @@ DEBUG = False
 
 x_FRAME_OPTIONS = 'SAMEORIGINS'
 
-ALLOWED_HOSTS = ['https://portfolio-four-1a8c026d6e2f.herokuapp.com']
+ALLOWED_HOSTS = ['*.herokuapp.com']
 
 
 # Application definition
